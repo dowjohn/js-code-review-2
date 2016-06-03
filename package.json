@@ -1,5 +1,5 @@
 {
-  "name": "ts-skeleton",
+  "name": "js-code-review-2",
   "version": "1.0.0",
   "scripts": {
     "start": "npm run tsc:w",

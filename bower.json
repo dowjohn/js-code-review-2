@@ -1,9 +1,9 @@
 {
-  "name": "ts-skeleton",
+  "name": "js-code-review-2",
   "description": "",
   "main": "index.js",
   "license": "ISC",
-  "homepage": "https://github.com/dowjohn/ts-skeleton",
+  "homepage": "https://github.com/dowjohn/js-code-review-2",
   "ignore": [
     "**/.*",
     "node_modules",
