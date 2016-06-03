@@ -3,12 +3,14 @@ import { Meal } from './meal.model';
 import { MealComponent } from './meal.component';
 import { EditMealDetailsComponent} from './edit-meal.component';
 import { NewMealComponent} from './new-meal.component'
+import { CaloriePipe } from './calorie.pipe';
 
 @Component({
     selector: 'meal-list',
     inputs: ['mealList'],
     outputs: ['onMealSelect'],
     directives: [MealComponent, EditMealDetailsComponent, NewMealComponent],
+    Pipes: [CaloriePipe],
     template: `
     <div class='row'>
         <new-meal (onSubmitNewMeal)="[createMeal($event)]">
@@ -16,7 +18,12 @@ import { NewMealComponent} from './new-meal.component'
     </div>
     <div class='row'>
         <div class='col-sm-6'>
-            <meal-display *ngFor="#currentMeal of mealList"
+            <select (change)="onChange($event.target.value)">
+                <option value="all">Show All</option>
+                <option value="healthy">Show low cal</option>
+                <option value="unHealthy" selected="selected">Show high cal</option>
+            </select>
+            <meal-display *ngFor="#currentMeal of mealList | healthy:filterCalories"
                 (click)="mealClicked(currentMeal)"
                 [meal]="currentMeal"
                 [class.selected]="currentMeal === selectedMeal">
@@ -33,6 +40,7 @@ export class MealListComponent {
     public onMealSelect: EventEmitter<Meal>;
     public selectedMeal: Meal;
     public isAddFormShown: boolean = false;
+    public filterCalories: string = "unHealthy";
     constructor() {
         this.onMealSelect = new EventEmitter();
     }
@@ -44,4 +52,7 @@ export class MealListComponent {
         newMeal.id = this.mealList.length;
         this.mealList.push(newMeal);
     }
+    onChange(filterOption) {
+        this.filterCalories = filterOption;
+     }
 }
