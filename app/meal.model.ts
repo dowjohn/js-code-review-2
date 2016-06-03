@@ -1,4 +1,10 @@
 export class Meal {
-    constructor(public name: string, public details: string, public calories: string, public id: number) {
+    public healthy: boolean = false;
+    constructor(public name: string, public details: string, public calories: number, public id: number) {
+        if (calories <= 500) {
+            this.healthy = true;
+        } else {
+            this.healthy = false;
+        }
     }
 }
