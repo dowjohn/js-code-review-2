@@ -9,8 +9,8 @@ import { CaloriePipe } from './calorie.pipe';
     selector: 'meal-list',
     inputs: ['mealList'],
     outputs: ['onMealSelect'],
+    pipes: [CaloriePipe],
     directives: [MealComponent, EditMealDetailsComponent, NewMealComponent],
-    Pipes: [CaloriePipe],
     template: `
     <div class='row'>
         <new-meal (onSubmitNewMeal)="[createMeal($event)]">
