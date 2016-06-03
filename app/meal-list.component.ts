@@ -16,6 +16,8 @@ import { EditMealDetailsComponent} from './edit-meal.component';
     </meal-display>
     <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal">
     </edit-meal-details>
+    <new-meal>
+    </new-meal>
 
     `
 })
