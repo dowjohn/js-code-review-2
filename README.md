@@ -1,14 +1,14 @@
-# ts-skeleton
+# js-code-review-2
 
 ###Author: John Dow
 
-###Description: To do stuff
+###Description: MEALR. A meal tracker that shows calories and description
 
 ###Download through GitHub
 
-###URL: Download @ https://github.com/dowjohn/ts-skeleton
+###URL: Download @ https://github.com/dowjohn/js-code-review-2
 
-###Setup: Download through GitHub, then in terminal: npm install && bower install && gulp build && gulp serve
+###Setup: Download through GitHub, then in terminal: npm install && bower install && gulp build && gulp serve. Must have angular2 as well.
 
 ###The MIT License (MIT)
 
