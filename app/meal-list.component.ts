@@ -10,16 +10,21 @@ import { NewMealComponent} from './new-meal.component'
     outputs: ['onMealSelect'],
     directives: [MealComponent, EditMealDetailsComponent, NewMealComponent],
     template: `
-    <meal-display *ngFor="#currentMeal of mealList"
-        (click)="mealClicked(currentMeal)"
-        [meal]="currentMeal"
-        [class.selected]="currentMeal === selectedMeal">
-    </meal-display>
-    <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal">
-    </edit-meal-details>
-    <new-meal (onSubmitNewMeal)="[createMeal($event)]">
-    </new-meal>
-
+    <div class='row'>
+        <div class='col-sm-4'>
+            <meal-display *ngFor="#currentMeal of mealList"
+                (click)="mealClicked(currentMeal)"
+                [meal]="currentMeal"
+                [class.selected]="currentMeal === selectedMeal">
+            </meal-display>
+        </div>
+        <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal">
+        </edit-meal-details>
+    </div>
+    <div class='row'>
+        <new-meal (onSubmitNewMeal)="[createMeal($event)]">
+        </new-meal>
+    </div>
     `
 })
 
