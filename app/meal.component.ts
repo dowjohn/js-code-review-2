@@ -2,15 +2,18 @@ import { Component } from 'angular2/core';
 import { Meal } from './meal.model';
 
 @Component ({
-  selector: 'keg-display',
-  inputs: ['keg'],
+  selector: 'meal-display',
+  inputs: ['meal'],
   template: `
-  <h3 [class.low]="keg.pints <= 10">
+  <h5 class="">
     {{ meal.name }}:
-    {{ meal.description }}
-  </h3>
+    <br>
+    {{ meal.details }}
+    <br>
+    calories: {{ meal.calories }}
+  </h5>
   `
 })
-export class KegComponent {
+export class MealComponent {
   public meal: Meal;
 }
