@@ -5,18 +5,12 @@ import {Meal} from './meal.model';
     selector: 'edit-meal-details',
     inputs: ['meal'],
     template: `
-    <div>
+    <form class='form-group col-sm-4'>
         <h3>Edit Name and/or type: </h3>
-        <div class='row formFix'>
-            <input [(ngModel)]="meal.name" class="col-sm-6 input-lg meal-form"/>
-        </div>
-        <div class='row formFix'>
-            <input [(ngModel)]="meal.details" class="col-sm-6 input-lg meal-form"/>
-        </div>
-        <div class='row formFix'>
-            <input [(ngModel)]="meal.calories" type='number' class="col-sm-6 input-lg meal-form"/>
-        </div>
-    </div>
+        <input [(ngModel)]="meal.name" class="input-lg form-control"/>
+        <input [(ngModel)]="meal.details" class="input-lg form-control"/>
+        <input [(ngModel)]="meal.calories" type='number' class="input-lg form-control"/>
+    </form>
     `
 })
 export class EditMealDetailsComponent {

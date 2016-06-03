@@ -9,7 +9,7 @@ import { MealListComponent } from './meal-list.component';
     <div class="container">
         <h1>MEALR</h1>
         <h4>List of Meals Eaten Today</h4>
-        <meal-list
+        <meal-list class='row'
         [mealList]="meals"
         (onMealSelect)="mealWasSelected($event)">
         </meal-list>
