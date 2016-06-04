@@ -8,7 +8,7 @@
 
 ###URL: Download @ https://github.com/dowjohn/js-code-review-2
 
-###Setup: Download through GitHub, then in terminal: npm install && bower install && gulp build && gulp serve. Must have angular2 as well.
+###Setup: Need to have node, bower, Sass, gulp, and angularJS installed globally and then run 4 setup commands: npm install, bower install, gulp build, gulp serve.
 
 ###The MIT License (MIT)
 
